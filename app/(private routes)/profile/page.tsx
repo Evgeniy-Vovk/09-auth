@@ -14,7 +14,8 @@ export async function generateMetadata(): Promise<Metadata> {
       description: `View and manage ${user.username}'s profile on NoteHub.`,
     };
   } catch (error) {
-    console.error('Помилка завантаження профілю:', error);
+    // ✅ ВИПРАВЛЕНО - використовуємо error
+    console.error('Помилка завантаження метаданих профілю:', error);
     return {
       title: 'Profile | NoteHub',
       description: 'View and manage your user profile on NoteHub.',
@@ -29,8 +30,8 @@ export default async function ProfilePage() {
     // 3. Отримуємо дані користувача безпосередньо на сервері
     user = await getCurrentUserServer();
   } catch (error) {
-    console.error('Помилка оновлення профілю:', error);
-
+    // ✅ ВИПРАВЛЕНО - використовуємо error
+    console.error('Помилка завантаження профілю:', error);
     redirect('/sign-in');
   }
 
