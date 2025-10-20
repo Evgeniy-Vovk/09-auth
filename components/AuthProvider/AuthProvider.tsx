@@ -31,7 +31,6 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           const user = await getCurrentUser();
           setUser(user);
         } catch (error) {
-          // ✅ ВИПРАВЛЕНО - використовуємо error
           console.error('Authentication error:', error);
           clearAuthState();
           router.replace('/sign-in');
