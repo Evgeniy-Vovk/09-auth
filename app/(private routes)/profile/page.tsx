@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 import { getCurrentUserServer } from '@/lib/api/serverApi';
 import css from './ProfilePage.module.css';
+export const dynamic = 'force-dynamic';
 
 // 1. Динамічна генерація метаданих на сервері
 export async function generateMetadata(): Promise<Metadata> {
